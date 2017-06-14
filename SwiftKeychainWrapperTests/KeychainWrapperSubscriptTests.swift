@@ -63,7 +63,7 @@ class KeychainWrapperSubscriptTests: XCTestCase {
             return
         }
         
-        if let retrievedString = NSString(data: retrievedData as Data, encoding: String.Encoding.utf8.rawValue) as? String {
+        if let retrievedString = NSString(data: retrievedData as Data, encoding: String.Encoding.utf8.rawValue) as String? {
             XCTAssertEqual(retrievedString, testString, "String retrieved from data for key should equal string saved as data for key")
         } else {
             XCTFail("Output Data for key does not match input. ")
